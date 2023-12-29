@@ -26,12 +26,13 @@
     "openai": "^3.3.0"
   },
   "devDependencies": {
-    "@types/bcrypt": "^5.0.0",
+    "@types/bcrypt": "^5.0.2",
     "@types/cookie-parser": "^1.4.3",
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
+    "@types/express-validator": "^3.0.0",
     "@types/jsonwebtoken": "^9.0.1",
-    "@types/node": "^20.4.8",
+    "@types/node": "^20.10.5",
     "nodemon": "^3.0.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
