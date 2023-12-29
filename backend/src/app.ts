@@ -11,7 +11,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://mern-gpt.vercel.app",
+    origin: "https://mern-ai-saas.vercel.app",
     credentials: true,
   })
 );
