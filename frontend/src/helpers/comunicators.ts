@@ -3,13 +3,10 @@ import axios from "axios";
 export async function loginUser(params: { email: string; password: string }) {
   const { email, password } = params;
 
-  const response = await axios.post(
-    "https://mern-ai-saas.vercel.app/user/signin",
-    {
-      email,
-      password,
-    }
-  );
+  const response = await axios.post("/user/signin", {
+    email,
+    password,
+  });
 
   if (response.status !== 201) {
     throw new Error(response.data.message);
@@ -27,14 +24,11 @@ export async function registerUser(params: {
 }) {
   const { name, email, password } = params;
 
-  const response = await axios.post(
-    "https://mern-ai-saas.vercel.app/user/signup",
-    {
-      name,
-      email,
-      password,
-    }
-  );
+  const response = await axios.post("/user/signup", {
+    name,
+    email,
+    password,
+  });
 
   if (response.status !== 201) {
     throw new Error(response.data.message);
@@ -46,9 +40,7 @@ export async function registerUser(params: {
 }
 
 export async function checkAuthStatus() {
-  const response = await axios.get(
-    "https://mern-ai-saas.vercel.app/user/auth-status"
-  );
+  const response = await axios.get("/user/auth-status");
 
   if (response.status !== 201) {
     throw new Error(response.data.message);
@@ -59,12 +51,9 @@ export async function checkAuthStatus() {
 }
 
 export async function sendChatReq(message: string) {
-  const response = await axios.post(
-    "https://mern-ai-saas.vercel.app/chat/new",
-    {
-      message,
-    }
-  );
+  const response = await axios.post("/chat/new", {
+    message,
+  });
 
   if (response.status !== 200) {
     throw new Error("Error sending message");
@@ -75,9 +64,7 @@ export async function sendChatReq(message: string) {
 }
 
 export async function getUserChats() {
-  const response = await axios.get(
-    "https://mern-ai-saas.vercel.app/chat/all-chats"
-  );
+  const response = await axios.get("/chat/all-chats");
 
   if (response.status !== 200) {
     throw new Error("Error getting all chats");
@@ -88,9 +75,7 @@ export async function getUserChats() {
 }
 
 export async function deleteUserChats() {
-  const response = await axios.delete(
-    "https://mern-ai-saas.vercel.app/chat/delete"
-  );
+  const response = await axios.delete("/chat/delete");
 
   if (response.status !== 200) {
     throw new Error("Error deleting chats");
@@ -101,9 +86,7 @@ export async function deleteUserChats() {
 }
 
 export async function userLogOut() {
-  const response = await axios.get(
-    "https://mern-ai-saas.vercel.app/user/logout"
-  );
+  const response = await axios.get("/user/logout");
 
   if (response.status !== 201) {
     throw new Error("Error deleting chats");
