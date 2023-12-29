@@ -8,7 +8,7 @@ import { AuthProvider } from "./context/AuthContext.tsx";
 import axios from "axios";
 import { Toaster } from "react-hot-toast";
 
-axios.defaults.baseURL = "http://localhost:3000/api/v1";
+axios.defaults.baseURL = "https://mern-ai-saas.vercel.app/api/v1";
 axios.defaults.withCredentials = true;
 
 const theme = createTheme({
